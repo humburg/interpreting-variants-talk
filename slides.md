@@ -32,7 +32,7 @@ pitfalls). Non-coding variation is much harder.
 </div>
 
 # Exome sequencing
-## Identifying novel Breast and Ovarian Cancer risk genes
+## Identifying novel Breast and Ovarian Cancer risk genes {.small-header}
 <div class="twocolumn">
 	
 * Several DNA repair genes implicated in breast and ovarian cancer susceptability.
@@ -43,17 +43,41 @@ pitfalls). Non-coding variation is much harder.
 * Sequenced pools of 24 individuals.
 * Included 79 individuals with known mutations in breast cancer predisposition 
   genes as positive controls. 
-* Replicated findings in 7,781 cases and 5,861 controls.
 
-<div>
-<div class="fragment">
-	![](figure/ppm1d_paper.png)
 </div>
+</div>
+
+<div class="fragment popup">
+![](figure/ppm1d_paper.png)	
 </div>
 
 ## Analysis strategy
 
-* 
+* Sequence pools with HiSeq2000
+   * $\gt$ 480$\times$ coverage in 90% of target region
+* Call variants in pools with [Syzygy](http://sourceforge.net/projects/syzygy/)
+    * Good sensitivity for rare variants (24/26 SNPs and 51/54 indels)
+    * Identified 34,564 variants
+* <span class="fragment highlight-current-red" data-fragment-index="0">
+  Functional annotation obtained via EnsEMBL</span> 
+    * <span class="fragment highlight-current-red" data-fragment-index="0">
+      Substantial clean-up and curation of annotations</span> 
+    * <span class="fragment highlight-current-red" data-fragment-index="0">
+      Focused on 1,044 protein truncating variants</span>
+      
+## Variant annotation
+
+* Variant annotations depend on quality of transcript annotations.
+* Different annotation software may give different results.
+
+<div class="fragment current-visible popup">
+![](figure/annotation_paper.png)
+</div> 
+
+<div class="fragment current-visible popup">
+![](figure/annotation.png)
+</div>
+
  
 
 # Non-coding variants: More information needed
