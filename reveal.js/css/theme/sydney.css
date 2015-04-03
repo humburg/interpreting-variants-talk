@@ -5,13 +5,31 @@
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
+.reveal .popup {
+  position: relative;
+  -webkit-transform: translateY(-70%);
+  -ms-transform: translateY(-70%);
+  transform: translateY(-70%); }
+
 div.twocolumn {
   -moz-column-count: 2;
-  -moz-column-gap: 50%;
+  -moz-column-gap: 10px;
   -webkit-column-count: 2;
-  -webkit-column-gap: 50%;
+  -webkit-column-gap: 10px;
   column-count: 2;
-  column-gap: 50%; }
+  column-gap: 10px; }
+
+.reveal .small-header h1 {
+  font-size: 2em; }
+
+.reveal .small-header h2 {
+  font-size: 1.5em; }
+
+.reveal .small-header h3 {
+  font-size: 1em; }
+
+.reveal .popup {
+  z-index: 100; }
 
 /*********************************************
  * GLOBAL STYLES
