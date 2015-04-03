@@ -35,10 +35,16 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 }
 
 %vertical-align {
-  position: relative;
-  -webkit-transform: translateY(-70%);
-  -ms-transform: translateY(-70%);
-  transform: translateY(-70%);
+  position: absolute;
+  top: 0;
+  margin-top: $heading1Size + 1em;
+}
+
+%horizontal-align{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
 }
 
 %two-column {
@@ -56,11 +62,11 @@ div.twocolumn{
 }
 
 .reveal .small-header h1{
-	font-size: 2em;
+	font-size: $heading1Size - 1em;
 }
 
 .reveal .small-header h2{
-	font-size: 1.5em;
+	font-size: $heading2Size - 0.5em;
 }
 
 .reveal .small-header h3{
@@ -69,6 +75,7 @@ div.twocolumn{
 
 .reveal .popup{
 	@extend %vertical-align;
+	@extend %horizontal-align;
 	z-index: 100;
 }
 
