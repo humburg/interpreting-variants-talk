@@ -25,7 +25,7 @@ $for(css)$
     <link rel="stylesheet" href="$css$"/>
 $endfor$
 $else$
-    <link rel="stylesheet" href="$revealjs-url$/css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="$revealjs-url$/css/theme/$theme$.css" id="theme">
 $endif$
     <!-- If the query includes 'print-pdf', include the PDF print sheet -->
     <script>
