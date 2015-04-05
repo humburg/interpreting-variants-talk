@@ -90,6 +90,7 @@ $body$
         progress: true,
         history: true,
         center: true,
+        slideNumber: true,
         theme: $if(theme)$'$theme$'$else$Reveal.getQueryHash().theme$endif$, // available themes are in /css/theme
         transition: $if(transition)$'$transition$'$else$Reveal.getQueryHash().transition || 'default'$endif$, // default/cube/page/concave/zoom/linear/fade/none
 
@@ -101,6 +102,7 @@ $body$
 //          { src: '$revealjs-url$/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
 //          { src: '$revealjs-url$/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 ]});
+//	Reveal.configure({slideNumber:true});
     </script>
   $for(include-after)$
   $include-after$
