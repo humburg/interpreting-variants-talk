@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Peter Humburg" />
+  <title>SNPs, ChIPs and RNA</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal.js/css/reveal.min.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+    <link rel="stylesheet" href="reveal.js/css/theme/sydney.css" id="theme">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">SNPs, ChIPs and RNA</h1>
+  <h1 class="subtitle">Attempts to understand complex phenotypes</h1>
+    <h2 class="author">Peter Humburg</h2>
+    <h3 class="date">15th April 2015</h3>
+</section>
+<section id="TOC">
+<h1>Overview</h1>
+<ul>
+<li><a href="#/interpreting-genomic-variation">Interpreting genomic variation</a></li>
+<li><a href="#/exome-sequencing">Exome sequencing</a></li>
+<li><a href="#/non-coding-variants-more-information-needed">Non-coding variants: More information needed</a></li>
+</ul>
+</section>
+
+<section><section id="interpreting-genomic-variation" class="titleslide slide level1"><h1>Interpreting genomic variation</h1></section></section>
+<section><section id="exome-sequencing" class="titleslide slide level1"><h1>Exome sequencing</h1></section><section id="identifying-novel-breast-and-ovarian-cancer-risk-genes" class="slide level2 small-header">
+<h1>Identifying novel Breast and Ovarian Cancer risk genes</h1>
+<div class="twocolumn">
+<ul>
+<li>Several DNA repair genes implicated in breast and ovarian cancer susceptability.</li>
+<li>Strong evidence that rare loss-of-function variants confer increased risk.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Sequenced exomes of 507 DNA repair genes in 1,150 patients.</li>
+<li>Sequenced pools of 24 individuals.</li>
+<li>Included 79 individuals with known mutations in breast cancer predisposition genes as positive controls.</li>
+</ul>
+</div>
+</div>
+<div class="fragment popup">
+<img src="figure/ppm1d_paper.png" />
+</div>
+</section><section id="analysis-strategy" class="slide level2">
+<h1>Analysis strategy</h1>
+<ul>
+<li>Sequence pools with HiSeq2000</li>
+<li><span class="math">\(\gt\)</span> 480<span class="math">\(\times\)</span> coverage in 90% of target region</li>
+<li>Call variants in pools with <a href="http://sourceforge.net/projects/syzygy/">Syzygy</a>
+<ul>
+<li>Good sensitivity for rare variants (24/26 SNPs and 51/54 indels)</li>
+<li>Identified 34,564 variants</li>
+</ul></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="0"> Functional annotation obtained via EnsEMBL</span>
+<ul>
+<li><span class="fragment highlight-current-red" data-fragment-index="0"> Substantial clean-up and curation of annotations</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="0"> Focused on 1,044 protein truncating variants</span></li>
+</ul></li>
+</ul>
+</section><section id="variant-annotation" class="slide level2">
+<h1>Variant annotation</h1>
+<ul>
+<li>Variant annotations depend on quality of transcript annotations.</li>
+<li>Different annotation software may give different results.</li>
+</ul>
+<div class="fragment current-visible popup">
+<img src="figure/annotation_paper.png" />
+</div>
+<div class="fragment current-visible popup">
+<img src="figure/annotation.png" />
+</div>
+</section><section id="results" class="slide level2">
+<h1>Results</h1>
+<ul>
+<li>Identified genes enriched for PTVs.</li>
+<li>Strongest PTV enrichment observed for PPM1D.</li>
+<li>Observed clustering of variants in final exon.</li>
+</ul>
+<div class="fragment">
+<p>Sequenced affected exon in 7,781 cases and 5,861 controls</p>
+<ul>
+<li>18 PTVs in 6,912 breast cancer cases</li>
+<li>12 PTVs in 1,121 ovarian cancer cases</li>
+<li>1 PTV in controls</li>
+</ul>
+</div>
+<div class="fragment current-visible popup">
+<img src="figure/ppm1d_cluster.png" />
+</div>
+<aside class="notes">
+<ul>
+<li>Removed variants used as positive controls.</li>
+<li>Five individuals had PPM1D PTVs in discovery cohort.</li>
+<li>25 PTVs total</li>
+<li>Relative risk: BC 2.7, OV 11.5</li>
+</ul>
+</aside>
+</section><section id="ppm1d" class="slide level2">
+<h1>PPM1D</h1>
+<ul>
+<li>Induced in p53 dependent manner</li>
+<li>Contributes to deactivation of p53</li>
+<li>Part of negative feedback loop required to escape p53-dependent cell cycle arrest</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Identified truncated proteins show increased activity.</li>
+<li>PPM1D over-expression previously associated with breast cancer.</li>
+</ul>
+</div>
+</section></section>
+<section><section id="non-coding-variants-more-information-needed" class="titleslide slide level1 small-header"><h1>Non-coding variants: More information needed</h1></section><section id="interpreting-non-coding-variants" class="slide level2 small-header">
+<h1>Interpreting non-coding variants</h1>
+<div class="twocolumn">
+<ul>
+<li>Impact of non-coding variants unclear</li>
+<li>Affected genes not obvious</li>
+<li>Effect on gene expression typically unknown</li>
+<li><span class="fragment highlight-current-red" data-fragment-index="0"> Existing epigenetic data may help</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="1"> eQTL analyses can help to establish links between SNPs and genes</span></li>
+</ul>
+<div class="fragment current-visible overlap" data-fragment-index="0">
+<img src="figure/encode.png" /> <img src="figure/blueprint.jpg" />
+</div>
+<div class="fragment current-visible overlap" data-fragment-index="1">
+<img src="figure/eqtl_network.png" />
+</div>
+</div>
+</section><section id="using-additional-genome-wide-data" class="slide level2 small-header">
+<h1>Using additional genome-wide data</h1>
+<p>ChIP-seq and RNA-seq data provide insight into the functional implications of genotypes. <strong>But</strong> need to consider</p>
+<ul>
+<li>Relevant cell type</li>
+<li>Relevant conditions</li>
+</ul>
+<div class="fragment popup2" data-fragment-index="2">
+<img src="figure/treatment_eqtl_paper.png" />
+</div>
+<div class="fragment popup" data-fragment-index="1">
+<img src="figure/cell_type_eqtl_paper.png" />
+</div>
+</section><section id="the-role-of-rs11074938" class="slide level2 small-header">
+<h1>The role of rs11074938</h1>
+<ul>
+<li>SNP (A/G) located in intron of CIITA</li>
+<li>Inside regulatory region</li>
+<li>CIITA is important regulator of MHC class II expression</li>
+<li>Could have implications for immune related diseases<br /> (<em>if this SNP affects CIITA</em>)</li>
+</ul>
+<div class="fragment fade-out popup">
+<img src="figure/rs11074938.png" />
+</div>
+<aside class="notes">
+<p>Annotations suggest SNP may have functional significance.</p>
+Unclear which gene is affected and to what extend.
+</aside>
+</section><section id="changes-to-gene-expression" class="slide level2 small-header">
+<h1>Changes to gene expression</h1>
+<div class="fragment fade-out popup" data-fragment-index="0">
+<img src="figure/cell_type_eqtl_paper.png" />
+</div>
+<div class="twocolumn">
+<ul>
+<li><span class="fragment highlight-current-red" data-fragment-index="1"> eQTL analysis in B cells shows reduced expression of CIITA associated with G allele</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="2"> Evidence for changes in expression of CIITA target genes</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="3"> Reduced presence of MHC class II proteins on cell surface associated with G allele</span></li>
+</ul>
+<div class="fragment current-visible overlap" data-fragment-index="1">
+<img src="figure/CIITA_expression.png" />
+</div>
+<div class="fragment overlap current-visible" data-fragment-index="2">
+<img src="figure/CIITA_network.png" />
+</div>
+<div class="fragment overlap current-visible" data-fragment-index="3">
+<img src="figure/MHC_protein.png" />
+</div>
+</section></section>
+    </div>
+  </div>
+
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'sydney', // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+//          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
+//          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+]});
+    </script>
+    </body>
+</html>
