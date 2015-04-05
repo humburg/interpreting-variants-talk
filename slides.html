@@ -42,6 +42,7 @@
 <li><a href="#/interpreting-genomic-variation">Interpreting genomic variation</a></li>
 <li><a href="#/exome-sequencing">Exome sequencing</a></li>
 <li><a href="#/non-coding-variants-more-information-needed">Non-coding variants: More information needed</a></li>
+<li><a href="#/conclusions">Conclusions</a></li>
 </ul>
 </section>
 
@@ -164,17 +165,27 @@
 </div>
 </section><section id="the-role-of-rs11074938" class="slide level2 small-header">
 <h1>The role of rs11074938</h1>
+<div class="twocolumn">
 <ul>
-<li>SNP (A/G) located in intron of CIITA</li>
+<li><a href="http://www.ensembl.org/Homo_sapiens/Variation/Explore?db=core;r=16:10912624-10912751;v=rs11074938;vdb=variation;vf=7436168">SNP</a> (A/G) located in intron of CIITA</li>
 <li>Inside regulatory region</li>
+<li>ENCODE data shows DHS and NF-<span class="math">\(\kappa\)</span>B binding</li>
 <li>CIITA is important regulator of MHC class II expression</li>
 <li>Could have implications for immune related diseases<br /> (<em>if this SNP affects CIITA</em>)</li>
 </ul>
-<div class="fragment fade-out popup">
+<div class="fragment" data-fragment-index="0">
+<img src="figure/CIITA_encode.png" />
+</div>
+</div>
+<div class="fragment fade-out popup" data-fragment-index="0">
 <img src="figure/rs11074938.png" />
+</div>
+<div class="fragment popup">
+<img src="figure/CIITA_paper.png" />
 </div>
 <aside class="notes">
 <p>Annotations suggest SNP may have functional significance.</p>
+<p>ENCODE data shows evidence of NF-<span class="math">\(\kappa\)</span>B in LCLs and DHS in LCLs and primary B cells (but not monocytes)</p>
 Unclear which gene is affected and to what extend.
 </aside>
 </section><section id="changes-to-gene-expression" class="slide level2 small-header">
@@ -197,6 +208,41 @@ Unclear which gene is affected and to what extend.
 <div class="fragment overlap current-visible" data-fragment-index="3">
 <img src="figure/MHC_protein.png" />
 </div>
+</section><section id="transcription-factor-binding" class="slide level2 small-header">
+<h1>Transcription factor binding</h1>
+<div class="twocolumn">
+<ul>
+<li>Reduced NF-<span class="math">\(\kappa\)</span>B binding due to sequence change plausible</li>
+<li>Used existing ChIP-seq data<span class="math">\(^1\)</span> to assess allele specific binding</li>
+</ul>
+<div>
+<img src="figure/CIITA_asb.png" />
+</div>
+<div class="footnote">
+<span class="math">\(^1\)</span> Kasowski <em>et al.</em>, Science (2010). PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/20299548?dopt=Abstract">20299548</a>
+</div>
+</div>
+</section><section id="does-it-matter" class="slide level2">
+<h1>Does it matter?</h1>
+<ul>
+<li>No known GWAS associations</li>
+<li>Good to see that available data and methods can identify functional non-coding SNPs.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Some evidence for association with the presence of nasal polyps in asthma patients<span class="math">\(^1\)</span></li>
+</ul>
+<div class="footnote">
+<span class="math">\(^1\)</span> Bae <em>et al.</em>, Mol Med Rep (2013). PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/23292525?dopt=Abstract">23292525</a>
+</div>
+</div>
+</section></section>
+<section><section id="conclusions" class="titleslide slide level1"><h1>Conclusions</h1></section><section id="this-could-be-easier" class="slide level2">
+<h1>This could be easier…</h1>
+</section><section id="challenges-ahead" class="slide level2">
+<h1>Challenges ahead</h1>
+</section><section id="acknowledgments" class="slide level2">
+<h1>Acknowledgments</h1>
 </section></section>
     </div>
   </div>
@@ -214,6 +260,7 @@ Unclear which gene is affected and to what extend.
         progress: true,
         history: true,
         center: true,
+        slideNumber: true,
         theme: 'sydney', // available themes are in /css/theme
         transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
@@ -225,6 +272,7 @@ Unclear which gene is affected and to what extend.
 //          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
 //          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 ]});
+//	Reveal.configure({slideNumber:true});
     </script>
     </body>
 </html>

@@ -157,24 +157,39 @@ of genotypes. **But** need to consider
 
 ## The role of rs11074938 {.small-header}
 
-* SNP (A/G) located in intron of CIITA
-* Inside regulatory region 
+<div class="twocolumn">
+* [SNP](http://www.ensembl.org/Homo_sapiens/Variation/Explore?db=core;r=16:10912624-10912751;v=rs11074938;vdb=variation;vf=7436168)
+  (A/G) located in intron of CIITA
+* Inside regulatory region
+* ENCODE data shows DHS and NF-$\kappa$B binding
 * CIITA is important regulator of MHC class II expression
 * Could have implications for immune related diseases  
   (*if this SNP affects CIITA*)
 
-<div class="fragment fade-out popup">
+<div class="fragment" data-fragment-index="0">
+![](figure/CIITA_encode.png)
+</div>
+
+</div>
+<div class="fragment fade-out popup" data-fragment-index="0">
 ![](figure/rs11074938.png)
 </div>
 
+<div class="fragment popup">
+![](figure/CIITA_paper.png)
+</div>
+
+
 <div class="notes">
 Annotations suggest SNP may have functional significance.
+
+ENCODE data shows evidence of NF-$\kappa$B in LCLs and DHS in
+LCLs and primary B cells (but not monocytes)
 
 Unclear which gene is affected and to what extend.
 </div>
 
 ## Changes to gene expression {.small-header}
-
 <div class="fragment fade-out popup" data-fragment-index="0">
 ![](figure/cell_type_eqtl_paper.png)
 </div>
@@ -201,3 +216,40 @@ Unclear which gene is affected and to what extend.
 <div class="fragment overlap current-visible" data-fragment-index="3">
 ![](figure/MHC_protein.png)
 </div>
+
+## Transcription factor binding {.small-header}
+
+<div class="twocolumn">
+* Reduced NF-$\kappa$B binding due to sequence change plausible
+* Used existing ChIP-seq data$^1$
+  to assess allele specific binding
+  
+<div>
+![](figure/CIITA_asb.png)
+</div>
+
+<div class="footnote">
+$^1$ Kasowski *et al.*, Science (2010). PMID: [20299548](http://www.ncbi.nlm.nih.gov/pubmed/20299548?dopt=Abstract)
+</div>
+</div>
+
+## Does it matter?
+
+* No known GWAS associations
+* Good to see that available data and methods can identify functional non-coding SNPs.
+
+. . .
+
+* Some evidence for association with the presence of nasal polyps in asthma patients$^1$
+
+
+<div class="footnote">
+$^1$ Bae *et al.*, Mol Med Rep (2013). PMID: [23292525](http://www.ncbi.nlm.nih.gov/pubmed/23292525?dopt=Abstract)
+</div>
+
+# Conclusions
+## This could be easier...
+
+## Challenges ahead
+
+## Acknowledgments
