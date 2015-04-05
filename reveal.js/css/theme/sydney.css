@@ -5,12 +5,12 @@
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-.reveal .slides section .fragment.current-visible.overlap.visible, .reveal .slides section .fragment.current-visible.overlap.visible.current-fragment, .reveal .popup, .reveal .popup2 {
+.reveal .slides section .fragment.current-visible.overlap.visible, .reveal .popup, .reveal .popup2 {
   position: absolute;
   top: 0;
   margin-top: 5em; }
 
-.reveal .slides section .fragment.current-visible.overlap.visible, .reveal .slides section .fragment.current-visible.overlap.visible.current-fragment {
+.reveal .slides section .fragment.current-visible.overlap.visible {
   margin-left: 50%;
   margin-top: 5.5em; }
 
@@ -50,12 +50,6 @@ div.twocolumn {
   z-index: 200;
   padding-top: 20%;
   padding-left: 5%; }
-
-.reveal .slides section .fragment.current-visible.overlap.visible {
-  display: none; }
-
-.reveal .slides section .fragment.current-visible.overlap.visible.current-fragment {
-  display: block; }
 
 /*********************************************
  * GLOBAL STYLES

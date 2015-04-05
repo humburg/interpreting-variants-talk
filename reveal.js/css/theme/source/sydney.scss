@@ -105,14 +105,9 @@ div.twocolumn{
 }
 
 .reveal .slides section .fragment.current-visible.overlap.visible{
-	display: none;
 	@extend %vertical-align-right;
 }
 
-.reveal .slides section .fragment.current-visible.overlap.visible.current-fragment{
-	display: block;
-	@extend %vertical-align-right;
-}
 
 // Theme template ------------------------------
 @import "../template/theme";
