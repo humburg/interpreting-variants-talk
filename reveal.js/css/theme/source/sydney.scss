@@ -28,16 +28,25 @@ $linkColor: #8b743d;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: rgba(79, 64, 28, 0.99);
 $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+$headingTextTransform: none; 
 
 // Background generator
 @mixin bodyBackground() {
 	@include radial-gradient( rgba(247,242,211,1), rgba(255,255,255,1) );
 }
 
+$content-margin-top: $heading1Size + 2em;
+
 %vertical-align {
   position: absolute;
   top: 0;
-  margin-top: $heading1Size + 1em;
+  margin-top: $content-margin-top;
+}
+
+%vertical-align-right{
+	@extend %vertical-align;
+	margin-left: 50%;
+	margin-top: $content-margin-top + 0.5em;
 }
 
 %horizontal-align{
@@ -54,6 +63,14 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
     -webkit-column-gap: 10px;
     column-count: 2;
     column-gap: 10px;
+}
+
+.reveal .subtitle {
+	font-size: 2em;
+}
+
+.reveal .author {
+	font-size: 1.5em
 }
 
 // two column slides
@@ -77,6 +94,24 @@ div.twocolumn{
 	@extend %vertical-align;
 	@extend %horizontal-align;
 	z-index: 100;
+}
+
+.reveal .popup2{
+	@extend %vertical-align;
+	@extend %horizontal-align;
+	z-index: 200;
+	padding-top: 20%;
+	padding-left: 5%;
+}
+
+.reveal .slides section .fragment.current-visible.overlap.visible{
+	display: none;
+	@extend %vertical-align-right;
+}
+
+.reveal .slides section .fragment.current-visible.overlap.visible.current-fragment{
+	display: block;
+	@extend %vertical-align-right;
 }
 
 // Theme template ------------------------------
