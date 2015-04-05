@@ -65,6 +65,11 @@ $content-margin-top: $heading1Size + 2em;
     column-gap: 10px;
 }
 
+%span-columns{
+	column-span: all;
+	-webkit-column-span: all;
+}
+
 .reveal .subtitle {
 	font-size: 2em;
 }
@@ -106,6 +111,23 @@ div.twocolumn{
 
 .reveal .slides section .fragment.current-visible.overlap.visible{
 	@extend %vertical-align-right;
+}
+
+div.footnote {
+	@extend %span-columns;
+	font-size: 0.75em;
+	border-top-width: 1px;
+	border-top-style: solid;
+	margin-top: 1em;
+	padding-top: 0.5em;
+}
+
+.reveal aside.controls {
+	visibility: hidden;
+}
+
+.reveal aside.controls:hover{
+	visibility: visible;
 }
 
 

@@ -28,6 +28,10 @@ div.twocolumn {
   column-count: 2;
   column-gap: 10px; }
 
+div.footnote {
+  column-span: all;
+  -webkit-column-span: all; }
+
 .reveal .subtitle {
   font-size: 2em; }
 
@@ -50,6 +54,19 @@ div.twocolumn {
   z-index: 200;
   padding-top: 20%;
   padding-left: 5%; }
+
+div.footnote {
+  font-size: 0.75em;
+  border-top-width: 1px;
+  border-top-style: solid;
+  margin-top: 1em;
+  padding-top: 0.5em; }
+
+.reveal aside.controls {
+  visibility: hidden; }
+
+.reveal aside.controls:hover {
+  visibility: visible; }
 
 /*********************************************
  * GLOBAL STYLES
