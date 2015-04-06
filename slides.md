@@ -221,7 +221,7 @@ Unclear which gene is affected and to what extend.
 
 <div class="twocolumn">
 * Reduced NF-$\kappa$B binding due to sequence change plausible
-* Used existing ChIP-seq data$^1$
+* Used existing ChIP-seq data$^*$
   to assess allele specific binding
   
 <div>
@@ -229,7 +229,7 @@ Unclear which gene is affected and to what extend.
 </div>
 
 <div class="footnote">
-$^1$ Kasowski *et al.*, Science (2010). PMID: [20299548](http://www.ncbi.nlm.nih.gov/pubmed/20299548?dopt=Abstract)
+$^*$ Kasowski *et al.*, Science (2010). PMID: [20299548](http://www.ncbi.nlm.nih.gov/pubmed/20299548?dopt=Abstract)
 </div>
 </div>
 
@@ -240,16 +240,43 @@ $^1$ Kasowski *et al.*, Science (2010). PMID: [20299548](http://www.ncbi.nlm.nih
 
 . . .
 
-* Some evidence for association with the presence of nasal polyps in asthma patients$^1$
+* Some evidence for association with the presence of nasal polyps in asthma patients$^*$
 
 
 <div class="footnote">
-$^1$ Bae *et al.*, Mol Med Rep (2013). PMID: [23292525](http://www.ncbi.nlm.nih.gov/pubmed/23292525?dopt=Abstract)
+$^*$ Bae *et al.*, Mol Med Rep (2013). PMID: [23292525](http://www.ncbi.nlm.nih.gov/pubmed/23292525?dopt=Abstract)
 </div>
 
 # Conclusions
 ## This could be easier...
 
+* Functional annotation of genomic variants is still difficult.
+* Coding variants should be relatively easy, but annotations can be unreliable.
+* Non-coding variants are still difficult.
+
+. . .
+
+* Understanding the effect of genomic variation requires a lot of work.
+* Generating the data is easier than understanding it.
+
 ## Challenges ahead
+
+* Data volume is increasing, can the analysis keep pace?
+* More and more public data sets available. Are we using them as much as we could?
+* Better integration of all types of genomic data.
+
+<div class="notes">
+If we want to analyse patient genomes on a large scale the analysis needs to be completed
+on time scales similar to the data generation.
+
+This requires reliable, automated procedures.
+
+Good quality data are available, some from large consortia, some from smaller studies.
+
+Identifying the data that are most relevant to a given project isn't always easy.
+
+Should systematically incorporate existing data into the analysis to provide 
+additional context.
+</div>
 
 ## Acknowledgments
