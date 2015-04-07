@@ -2,7 +2,8 @@ PANDOC = pandoc
 WEB_DIR = /usr/local/www/data/interpret-variants
 
 PANDOC_COMMON = --standalone --smart --normalize --toc --highlight-style=tango
-PANDOC_SLIDES = -t revealjs --toc-depth=1 -V toc-header="Overview" --mathjax \
+PANDOC_SLIDES = -t revealjs --toc-depth=1 -V toc-header="Overview" \
+                --mathjax="/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" \
                 -V theme="sydney" --template=include/default.revealjs --slide-level=2
 
 all: reveal.js/css/theme/sydney.css slides.html deploy
