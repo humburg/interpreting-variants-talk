@@ -279,4 +279,24 @@ Should systematically incorporate existing data into the analysis to provide
 additional context.
 </div>
 
-## Acknowledgments
+## Acknowledgments {.acknowledge .small-header}
+### Breast cancer risk and variant annotation
+
+      WTCHG                                           ICR                           
+--------------------------------- ------------------- -----------------------------  ------
+![](figure/peter-donnelly.jpg)    **Peter Donnelly**  ![](figure/nazneen-rahman.jpg) **Nazneen Rahman**
+![](figure/manuel-rivas.jpg)      Manuel A. Rivas     ![](figure/katie-snape.jpg)    Katie Snape
+![](figure/andrew-rimmer.jpg)     Andrew Rimmer                                      Elise Ruark
+![](figure/davis-mccarthy.jpeg)   Davis McCarthy
+--------------------------------- ------------------- ----------------------------- ------
+
+## Acknowledgments {.acknowledge .small-header}
+### eQTL and CIITA
+
+-------------------------------- -------------------
+![](figure/julian-knight.jpg)    **Julian C. Knight**
+![](figure/daniel-wong.jpg)      Daniel Wong
+                                 Wanseon Lee
+![](figure/ben-fairfax.jpg)      Benjamin P. Fairfax
+![](figure/seiko-makino.jpg)     Seiko Makino
+------------------------------- -------------------
