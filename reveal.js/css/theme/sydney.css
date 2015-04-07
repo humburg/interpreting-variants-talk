@@ -68,6 +68,18 @@ div.footnote {
 .reveal aside.controls:hover {
   visibility: visible; }
 
+.reveal .acknowledge img {
+  height: 80px;
+  margin: 0;
+  border: 0; }
+
+.reveal .acknowledge td {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 80px;
+  vertical-align: middle;
+  margin-bottom: 0; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
