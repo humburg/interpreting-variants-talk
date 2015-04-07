@@ -78,7 +78,8 @@ div.footnote {
   padding-bottom: 0;
   height: 80px;
   vertical-align: middle;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  font-size: smaller; }
 
 /*********************************************
  * GLOBAL STYLES
