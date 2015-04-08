@@ -282,7 +282,6 @@ additional context.
 ## Acknowledgments {.acknowledge .small-header}
 ### Breast cancer risk and variant annotation
 
-      WTCHG                                           ICR                           
 --------------------------------- ------------------- -----------------------------  ------
 ![](figure/peter-donnelly.jpg)    **Peter Donnelly**  ![](figure/nazneen-rahman.jpg) **Nazneen Rahman**
 ![](figure/manuel-rivas.jpg)      Manuel A. Rivas     ![](figure/katie-snape.jpg)    Katie Snape

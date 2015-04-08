@@ -28,8 +28,13 @@
 </head>
 <body>
   <div class="reveal">
+  <div class="header">
+      	<div class="logo">
+      	  <img src="figure/ox_brand.gif" alt="University of Oxford">
+      	</div>
+      </div>
     <div class="slides">
-
+      
 <section>
     <h1 class="title">SNPs, ChIPs and RNA</h1>
   <h1 class="subtitle">Attempts to understand complex phenotypes</h1>
@@ -268,35 +273,27 @@ Should systematically incorporate existing data into the analysis to provide add
 <h1>Acknowledgments</h1>
 <h3 id="breast-cancer-risk-and-variant-annotation">Breast cancer risk and variant annotation</h3>
 <table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">WTCHG</th>
-<th style="text-align: left;"></th>
-<th style="text-align: left;">ICR</th>
-<th style="text-align: left;"></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><img src="figure/peter-donnelly.jpg" /></td>
+<td style="text-align: left;"><img src="figure/peter-donnelly.jpg" /></td>
 <td style="text-align: left;"><strong>Peter Donnelly</strong></td>
 <td style="text-align: left;"><img src="figure/nazneen-rahman.jpg" /></td>
 <td style="text-align: left;"><strong>Nazneen Rahman</strong></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><img src="figure/manuel-rivas.jpg" /></td>
+<td style="text-align: left;"><img src="figure/manuel-rivas.jpg" /></td>
 <td style="text-align: left;">Manuel A. Rivas</td>
 <td style="text-align: left;"><img src="figure/katie-snape.jpg" /></td>
 <td style="text-align: left;">Katie Snape</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><img src="figure/andrew-rimmer.jpg" /></td>
+<td style="text-align: left;"><img src="figure/andrew-rimmer.jpg" /></td>
 <td style="text-align: left;">Andrew Rimmer</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;">Elise Ruark</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><img src="figure/davis-mccarthy.jpeg" /></td>
+<td style="text-align: left;"><img src="figure/davis-mccarthy.jpeg" /></td>
 <td style="text-align: left;">Davis McCarthy</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -359,7 +356,67 @@ Should systematically incorporate existing data into the analysis to provide add
 //          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
 //          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 ]});
-//	Reveal.configure({slideNumber:true});
-    </script>
+
+  // hide header on title slides
+  Element.prototype.hasClass = function hasClass(className) {
+    return this.className && new RegExp('(^|\\s)' + className + '(\\s|$)').test(this.className);
+  }
+  Element.prototype.isTitle = function isTitle() {
+  	return Reveal.getIndices()["h"] == 0 ||  this.hasClass("titleslide");
+  }
+  
+  // display slide title as part of header
+  Element.prototype.getStyle = function getStyle(cssprop){
+ 	if (this.currentStyle) //IE
+  		return this.currentStyle[cssprop]
+ 	else if (document.defaultView && document.defaultView.getComputedStyle) //Firefox
+  		return document.defaultView.getComputedStyle(this, "")[cssprop]
+ 	else //try and get inline style
+  		return this.style[cssprop]
+}
+  
+  Element.prototype.positionTitle = function positionTitle(){
+  	header = document.querySelector('.reveal .header');
+  	content = Reveal.getCurrentSlide().children 
+  	title = content[0];
+  	if(title.tagName == "H1"){
+  		headerContent = header.children;
+  		for(i = 0; i < headerContent.length; i++){
+  			if(headerContent[i].tagName == "H1"){
+  				header.removeChild(headerContent[i]);
+  			}
+  		}
+  		header.appendChild(title);
+  		var offset = header.offsetHeight;
+  		var adjusted = false;
+  		for(i = 0; i < content.length && !adjusted; i++){
+  			if(!content[i].hasClass("popup")){
+  				var curMargin = parseInt(content[i].getStyle("marginTop"));
+  				content[i].style.marginTop = curMargin + offset + "px";
+  				adjusted= true;
+  			}
+  		}
+  	}
+  }
+  
+  function toggleHeader(){
+  	if(Reveal.getCurrentSlide().isTitle()){
+  		document.querySelector('.reveal .header').style.visibility = 'hidden';
+  	}
+  	else{
+  		document.querySelector('.reveal .header').style.visibility = 'visible';
+  		Reveal.getCurrentSlide().positionTitle();
+  	}
+  }
+  
+  
+  toggleHeader();
+  Reveal.addEventListener('slidechanged', function(event) {
+    toggleHeader();
+  });
+
+  
+  
+  </script>
     </body>
 </html>
