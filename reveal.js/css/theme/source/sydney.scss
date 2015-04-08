@@ -79,6 +79,10 @@ $content-margin-top: $heading1Size + 2em;
 	font-size: 1.5em
 }
 
+.reveal .date {
+	font-size: 1em;
+}
+
 // two column slides
 div.twocolumn{
 	@extend %two-column;
