@@ -303,6 +303,7 @@ Should systematically incorporate existing data into the analysis to provide add
 </section><section id="acknowledgments-1" class="slide level2 acknowledge small-header">
 <h1>Acknowledgments</h1>
 <h3 id="eqtl-and-ciita">eQTL and CIITA</h3>
+<div class="twocolumn">
 <table>
 <tbody>
 <tr class="odd">
@@ -327,6 +328,10 @@ Should systematically incorporate existing data into the analysis to provide add
 </tr>
 </tbody>
 </table>
+<div id="group-photo">
+<img src="figure/knightlab.jpg" />
+</div>
+</div>
 </section></section>
     </div>
   </div>
@@ -375,7 +380,81 @@ Should systematically incorporate existing data into the analysis to provide add
   		return this.style[cssprop]
 }
   
-  Element.prototype.positionTitle = function positionTitle(){
+  function getComputedHeaderSize( presentationWidth, presentationHeight ) {
+		var wrapper = document.querySelector( '.reveal .header');
+		var config = Reveal.getConfig();
+		var size = {
+			// Header size
+			width: wrapper.getStyle("width"),
+			height: config.height * 0.15 + "px",
+
+			// Presentation size
+			presentationWidth: presentationWidth || wrapper.offsetWidth,
+			presentationHeight: presentationHeight || wrapper.offsetHeight
+		};
+
+		// Reduce available space by margin
+		size.presentationWidth -= ( size.presentationHeight * config.margin );
+		size.presentationHeight -= ( size.presentationHeight * config.margin );
+
+		// Slide width may be a percentage of available width
+		if( typeof size.width === 'string' && /%$/.test( size.width ) ) {
+			size.width = parseInt( size.width, 10 ) / 100 * size.presentationWidth;
+		}
+
+		// Slide height may be a percentage of available height
+		if( typeof size.height === 'string' && /%$/.test( size.height ) ) {
+			size.height = parseInt( size.height, 10 ) / 100 * size.presentationHeight;
+		}
+		size.height = parseInt(size.height);
+		size.width = parseInt(size.width);
+		return size;
+
+	}
+  function setHeaderScale(element){
+  	if( document.querySelector( '.reveal' )) {
+		var config = Reveal.getConfig();
+		var size = getComputedHeaderSize();
+		var isMobileDevice = navigator.userAgent.match( /(iphone|ipod|ipad|android)/gi );
+
+		element.style.width = size.width + 'px';
+		element.style.height = size.height + 'px';
+
+		// Determine scale of content to fit within available space
+		scale = Math.min( size.presentationWidth / size.width, size.presentationHeight / size.height );
+
+		// Respect max/min scale settings
+		scale = Math.max( scale, config.minScale );
+		scale = Math.min( scale, config.maxScale );
+
+		// Don't apply any scaling styles if scale is 1
+		if( scale === 1 ) {
+			element.style.zoom = '';
+			element.style.left = '';
+			element.style.top = '';
+			element.style.bottom = '';
+			element.style.right = '';
+			transformElement( element, '' );
+		}
+		else {
+			// Prefer zooming in desktop Chrome so that content remains crisp
+			if( !isMobileDevice && /chrome/i.test( navigator.userAgent ) && typeof element.style.zoom !== 'undefined' ) {
+				element.style.zoom = scale;
+			}
+			// Apply scale transform as a fallback
+			else {
+				element.style.left = '50%';
+				element.style.top = '50%';
+				element.style.bottom = 'auto';
+				element.style.right = 'auto';
+				transformElement( element, 'translate(-50%, -50%) scale('+ scale +')' );
+			}
+		}
+	}
+  	
+  }
+  
+  Element.prototype.positionTitle = function positionTitle(move){
   	header = document.querySelector('.reveal .header');
   	content = Reveal.getCurrentSlide().children 
   	title = content[0];
@@ -383,19 +462,32 @@ Should systematically incorporate existing data into the analysis to provide add
   		headerContent = header.children;
   		for(i = 0; i < headerContent.length; i++){
   			if(headerContent[i].tagName == "H1"){
-  				header.removeChild(headerContent[i]);
+  				previous = Reveal.getPreviousSlide();
+  				if(previous){
+  					previous.insertBefore(headerContent[i], previous.firstChild);
+  				}
+  				else{
+  					header.removeChild(headerContent[i]);
+  				}
   			}
   		}
-  		header.appendChild(title);
-  		var offset = header.offsetHeight;
-  		var adjusted = false;
-  		for(i = 0; i < content.length && !adjusted; i++){
-  			if(!content[i].hasClass("popup")){
-  				var curMargin = parseInt(content[i].getStyle("marginTop"));
-  				content[i].style.marginTop = curMargin + offset + "px";
-  				adjusted= true;
-  			}
-  		}
+  		if(move){
+  			header.appendChild(title);
+  		    setHeaderScale(title);
+  		   
+	  		var offset = header.offsetHeight;
+	  		var adjusted = false;
+	  		for(i = 0; i < content.length && !adjusted; i++){
+	  			if(!content[i].hasClass("popup")){
+	  				if(!content[i].hasClass("adjusted")){
+		  				var curMargin = parseInt(content[i].getStyle("marginTop"));
+		  				content[i].style.marginTop = curMargin + offset + "px";
+		  				content[i].className += " adjusted";
+	  				}
+	  				adjusted= true;
+	  			}
+	  		}
+	  	}
   	}
   }
   
@@ -405,8 +497,8 @@ Should systematically incorporate existing data into the analysis to provide add
   	}
   	else{
   		document.querySelector('.reveal .header').style.visibility = 'visible';
-  		Reveal.getCurrentSlide().positionTitle();
   	}
+  	Reveal.getCurrentSlide().positionTitle(!Reveal.getCurrentSlide().isTitle());
   }
   
   

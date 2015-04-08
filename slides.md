@@ -292,6 +292,7 @@ additional context.
 ## Acknowledgments {.acknowledge .small-header}
 ### eQTL and CIITA
 
+<div class="twocolumn">
 -------------------------------- -------------------
 ![](figure/julian-knight.jpg)    **Julian C. Knight**
 ![](figure/daniel-wong.jpg)      Daniel Wong
@@ -299,3 +300,7 @@ additional context.
 ![](figure/ben-fairfax.jpg)      Benjamin P. Fairfax
 ![](figure/seiko-makino.jpg)     Seiko Makino
 ------------------------------- -------------------
+<div id="group-photo">
+![](figure/knightlab.jpg)
+</div>
+</div>
