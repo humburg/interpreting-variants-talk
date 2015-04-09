@@ -21,8 +21,9 @@
 $mainColor: #333;
 $headingColor: #fff;
 $headingTextShadow: none;
-$heading1Size: 3em;
-$heading2Size: 2em;
+$heading1Size: 2em;
+$heading2Size: 1.5em;
+$heading3Size: 1em;
 $headerColor: #122f53;
 $headerHeight: $heading1Size + 1em;
 $backgroundColor: lighten($headerColor, 60%);
@@ -74,13 +75,21 @@ $content-margin-top: $heading1Size + 2em;
 }
 
 .reveal .header {
+	position: relative;
+	display: block;
+	text-align: center;
+	white-space: nowrap;
+	width: auto;
+}
+
+.reveal .headerWrapper{
 	visibility: visible;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	background-color: $headerColor;
-	text-align: center;
+	height: 15%;
 }
 
 .reveal .header .logo {
@@ -112,8 +121,8 @@ div.twocolumn{
 	@extend %two-column;
 }
 
-.reveal h1{
-	top: 0;
+.reveal .header h1{
+	font-size: $heading1Size;
 }
 
 .reveal .small-header h1{
