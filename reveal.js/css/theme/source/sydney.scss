@@ -150,6 +150,11 @@ div.footnote {
 	font-size: smaller;
 }
 
+#group-photo > img {
+  height: auto; 
+}
+
+
 // Theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------
