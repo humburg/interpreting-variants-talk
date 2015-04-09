@@ -34,7 +34,7 @@ pitfalls). Non-coding variation is much harder.
 </div>
 
 # Exome sequencing
-## Identifying novel Breast and Ovarian Cancer risk genes {.small-header}
+## Breast and Ovarian Cancer risk genes {.small-header}
 <div class="twocolumn">
 	
 * Several DNA repair genes implicated in breast and ovarian cancer susceptability.
@@ -116,7 +116,7 @@ Sequenced affected exon in  7,781 cases and 5,861 controls
 * PPM1D over-expression previously associated with breast cancer. 
 
 
-# Non-coding variants: More information needed {.small-header}
+# Non-coding variants: More information needed
 
 ## Interpreting non-coding variants {.small-header}
 
