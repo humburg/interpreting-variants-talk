@@ -19,15 +19,12 @@
 
 // Override theme settings (see ../template/settings.scss)
 $mainColor: #333;
-$headingColor: #fff;
+$headingColor: #333;
 $headingTextShadow: none;
-$heading1Size: 2em;
-$heading2Size: 1.5em;
-$heading3Size: 1em;
-$headerColor: #122f53;
-$headerHeight: $heading1Size + 1em;
-$backgroundColor: lighten($headerColor, 60%);
-$linkColor: $headerColor;
+$heading1Size: 3em;
+$heading2Size: 2em;
+$backgroundColor: #f7f3de;
+$linkColor: #8b743d;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: rgba(79, 64, 28, 0.99);
 $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
@@ -35,9 +32,9 @@ $headingTextTransform: none;
 $ackHeight: 80px;
 
 // Background generator
-//@mixin bodyBackground() {
-//	@include radial-gradient( rgba(247,242,211,1), rgba(255,255,255,1) );
-//}
+@mixin bodyBackground() {
+	@include radial-gradient( rgba(247,242,211,1), rgba(255,255,255,1) );
+}
 
 $content-margin-top: $heading1Size + 2em;
 
@@ -74,36 +71,6 @@ $content-margin-top: $heading1Size + 2em;
 	-webkit-column-span: all;
 }
 
-.reveal .header {
-	position: relative;
-	display: block;
-	text-align: center;
-	white-space: nowrap;
-	width: auto;
-}
-
-.reveal .headerWrapper{
-	visibility: visible;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background-color: $headerColor;
-	height: 15%;
-}
-
-.reveal .header .logo {
-	float: left;
-}
-
-.reveal .title, .reveal .subtitle, .reveal .author, .reveal .date, .reveal .slides h3 {
-	color: $headerColor;
-}
-
-.reveal .titleslide h1{
-	color: $headerColor;
-}
-
 .reveal .subtitle {
 	font-size: 2em;
 }
@@ -119,10 +86,6 @@ $content-margin-top: $heading1Size + 2em;
 // two column slides
 div.twocolumn{
 	@extend %two-column;
-}
-
-.reveal .header h1{
-	font-size: $heading1Size;
 }
 
 .reveal .small-header h1{
@@ -186,9 +149,7 @@ div.footnote {
 	margin-bottom: 0;
 	font-size: smaller;
 }
-#group-photo > img {
-	height: auto;
-}
+
 // Theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------
