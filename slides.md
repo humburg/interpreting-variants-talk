@@ -5,20 +5,22 @@ author: Peter Humburg
 date: 15th April 2015
 ---
 
-# Interpreting genomic variation
+# Introduction
 
-* Sequencing of patient genomes increasingly common
-* Can identify relevant variants
+## Interpreting genomic variation 
 
-. . .
-
-* ... amongst a large number of unrelated variants
-* Computational strategies can narrow the set of candidates
-
-. . .
-
-* ... but non-coding variants are difficult to interpret
-* Want to leverage existing data as much as possible 
+* <span class="fragment highlight-current-red" data-fragment-index="0">
+  Sequencing of patient genomes increasingly common</span>
+* <span class="fragment highlight-current-red" data-fragment-index="0">
+  Can identify relevant variants</span>
+* <span class="fragment highlight-current-red" data-fragment-index="1">
+  ... amongst a large number of unrelated variants</span>
+* <span class="fragment highlight-current-red" data-fragment-index="1">
+  Computational strategies can narrow the set of candidates</span>
+* <span class="fragment highlight-current-red" data-fragment-index="2">
+  ... but variants are often difficult to interpret</span>
+* <span class="fragment highlight-current-red" data-fragment-index="2">
+  Want to leverage existing data as much as possible</span> 
 
 <div class="notes">
 Typical sequencing studies either focus on individual patients (or trios)
@@ -41,7 +43,7 @@ pitfalls). Non-coding variation is much harder.
 * Strong evidence that rare loss-of-function variants confer increased risk.
 
 <div class="fragment">
-* Sequenced exomes of 507 DNA repair genes in 1,150 patients.
+* Sequenced exons of 507 DNA repair genes in 1,150 patients.
 * Sequenced pools of 24 individuals.
 * Included 79 individuals with known mutations in breast cancer predisposition 
   genes as positive controls. 
@@ -49,8 +51,9 @@ pitfalls). Non-coding variation is much harder.
 </div>
 </div>
 
-<div class="fragment popup">
-![](figure/ppm1d_paper.png)	
+<div class="notes">
+Note that no controls were sequenced and samples are pooled (no barcoding) to 
+reduce amount of time and money required.
 </div>
 
 ## Analysis strategy
@@ -58,7 +61,8 @@ pitfalls). Non-coding variation is much harder.
 * Sequence pools with HiSeq2000
    * $\gt$ 480$\times$ coverage in 90% of target region
 * Call variants in pools with [Syzygy](http://sourceforge.net/projects/syzygy/)
-    * Good sensitivity for rare variants (24/26 SNPs and 51/54 indels)
+    * Good sensitivity for rare variants  
+      (24/26 SNPs and 51/54 indels)
     * Identified 34,564 variants
 * <span class="fragment highlight-current-red" data-fragment-index="0">
   Functional annotation obtained via EnsEMBL</span> 
@@ -100,6 +104,8 @@ Sequenced affected exon in  7,781 cases and 5,861 controls
 <div class="notes">
 * Removed variants used as positive controls.
 * Five individuals had PPM1D PTVs in discovery cohort.
+* Note that position in transcript suggests these variants will
+  escape NMD (may have been excluded by strict LoF filter) 
 * 25 PTVs total
 * Relative risk: BC 2.7, OV 11.5
 </div>
@@ -115,6 +121,9 @@ Sequenced affected exon in  7,781 cases and 5,861 controls
 * Identified truncated proteins show increased activity.
 * PPM1D over-expression previously associated with breast cancer. 
 
+<div class="fragment popup">
+![](figure/ppm1d_paper.png)	
+</div>
 
 # Non-coding variants: More information needed
 

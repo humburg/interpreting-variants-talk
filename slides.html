@@ -39,14 +39,30 @@
 <section id="TOC">
 <h1>Overview</h1>
 <ul>
-<li><a href="#/interpreting-genomic-variation">Interpreting genomic variation</a></li>
+<li><a href="#/introduction">Introduction</a></li>
 <li><a href="#/exome-sequencing">Exome sequencing</a></li>
 <li><a href="#/non-coding-variants-more-information-needed">Non-coding variants: More information needed</a></li>
 <li><a href="#/conclusions">Conclusions</a></li>
 </ul>
 </section>
 
-<section><section id="interpreting-genomic-variation" class="titleslide slide level1"><h1>Interpreting genomic variation</h1></section></section>
+<section><section id="introduction" class="titleslide slide level1"><h1>Introduction</h1></section><section id="interpreting-genomic-variation" class="slide level2">
+<h1>Interpreting genomic variation</h1>
+<ul>
+<li><span class="fragment highlight-current-red" data-fragment-index="0"> Sequencing of patient genomes increasingly common</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="0"> Can identify relevant variants</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="1"> … amongst a large number of unrelated variants</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="1"> Computational strategies can narrow the set of candidates</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="2"> … but variants are often difficult to interpret</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="2"> Want to leverage existing data as much as possible</span></li>
+</ul>
+<aside class="notes">
+<p>Typical sequencing studies either focus on individual patients (or trios) or larger cohorts.</p>
+<p>Obviously these serve different objectives, either individual diagnosis/treatment or generally gaining better understanding of phenotype.</p>
+<p>Variants of interest may be rare or common.</p>
+Understanding the impact of exonic variation is relatively easy (but not without pitfalls). Non-coding variation is much harder.
+</aside>
+</section></section>
 <section><section id="exome-sequencing" class="titleslide slide level1"><h1>Exome sequencing</h1></section><section id="breast-and-ovarian-cancer-risk-genes" class="slide level2 small-header">
 <h1>Breast and Ovarian Cancer risk genes</h1>
 <div class="twocolumn">
@@ -56,15 +72,15 @@
 </ul>
 <div class="fragment">
 <ul>
-<li>Sequenced exomes of 507 DNA repair genes in 1,150 patients.</li>
+<li>Sequenced exons of 507 DNA repair genes in 1,150 patients.</li>
 <li>Sequenced pools of 24 individuals.</li>
 <li>Included 79 individuals with known mutations in breast cancer predisposition genes as positive controls.</li>
 </ul>
 </div>
 </div>
-<div class="fragment popup">
-<img src="figure/ppm1d_paper.png" />
-</div>
+<aside class="notes">
+Note that no controls were sequenced and samples are pooled (no barcoding) to reduce amount of time and money required.
+</aside>
 </section><section id="analysis-strategy" class="slide level2">
 <h1>Analysis strategy</h1>
 <ul>
@@ -72,7 +88,7 @@
 <li><span class="math">\(\gt\)</span> 480<span class="math">\(\times\)</span> coverage in 90% of target region</li>
 <li>Call variants in pools with <a href="http://sourceforge.net/projects/syzygy/">Syzygy</a>
 <ul>
-<li>Good sensitivity for rare variants (24/26 SNPs and 51/54 indels)</li>
+<li>Good sensitivity for rare variants<br /> (24/26 SNPs and 51/54 indels)</li>
 <li>Identified 34,564 variants</li>
 </ul></li>
 <li><span class="fragment highlight-current-red" data-fragment-index="0"> Functional annotation obtained via EnsEMBL</span>
@@ -115,6 +131,7 @@
 <ul>
 <li>Removed variants used as positive controls.</li>
 <li>Five individuals had PPM1D PTVs in discovery cohort.</li>
+<li>Note that position in transcript suggests these variants will escape NMD (may have been excluded by strict LoF filter)</li>
 <li>25 PTVs total</li>
 <li>Relative risk: BC 2.7, OV 11.5</li>
 </ul>
@@ -131,6 +148,9 @@
 <li>Identified truncated proteins show increased activity.</li>
 <li>PPM1D over-expression previously associated with breast cancer.</li>
 </ul>
+<div class="fragment popup">
+<img src="figure/ppm1d_paper.png" />
+</div>
 </div>
 </section></section>
 <section><section id="non-coding-variants-more-information-needed" class="titleslide slide level1"><h1>Non-coding variants: More information needed</h1></section><section id="interpreting-non-coding-variants" class="slide level2 small-header">
