@@ -38,6 +38,9 @@ div.footnote {
 .reveal .author {
   font-size: 1.5em; }
 
+.reveal .date {
+  font-size: 1em; }
+
 .reveal .small-header h1 {
   font-size: 2em; }
 
@@ -80,6 +83,9 @@ div.footnote {
   vertical-align: middle;
   margin-bottom: 0;
   font-size: smaller; }
+
+#group-photo > img {
+  height: auto; }
 
 /*********************************************
  * GLOBAL STYLES
