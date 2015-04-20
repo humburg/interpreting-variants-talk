@@ -118,7 +118,7 @@ Sequenced affected exon in  7,781 cases and 5,861 controls
 
 . . .
 
-* Identified truncated proteins show increased activity.
+* Truncated proteins show increased activity.
 * PPM1D over-expression previously associated with breast cancer. 
 
 <div class="fragment popup">
