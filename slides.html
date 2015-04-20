@@ -28,15 +28,8 @@
 </head>
 <body>
   <div class="reveal">
-  	<div class="headerWrapper">
-	  	<div class="header">
-	      	<div class="logo">
-	      	  <img src="figure/ox_brand.gif" alt="University of Oxford">
-	      	</div>
-	    </div>
-    </div>
     <div class="slides">
-      
+
 <section>
     <h1 class="title">SNPs, ChIPs and RNA</h1>
   <h1 class="subtitle">Attempts to understand complex phenotypes</h1>
@@ -46,14 +39,30 @@
 <section id="TOC">
 <h1>Overview</h1>
 <ul>
-<li><a href="#/interpreting-genomic-variation">Interpreting genomic variation</a></li>
+<li><a href="#/introduction">Introduction</a></li>
 <li><a href="#/exome-sequencing">Exome sequencing</a></li>
 <li><a href="#/non-coding-variants-more-information-needed">Non-coding variants: More information needed</a></li>
 <li><a href="#/conclusions">Conclusions</a></li>
 </ul>
 </section>
 
-<section><section id="interpreting-genomic-variation" class="titleslide slide level1"><h1>Interpreting genomic variation</h1></section></section>
+<section><section id="introduction" class="titleslide slide level1"><h1>Introduction</h1></section><section id="interpreting-genomic-variation" class="slide level2">
+<h1>Interpreting genomic variation</h1>
+<ul>
+<li><span class="fragment highlight-current-red" data-fragment-index="0"> Sequencing of patient genomes increasingly common</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="0"> Can identify relevant variants</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="1"> … amongst a large number of unrelated variants</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="1"> Computational strategies can narrow the set of candidates</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="2"> … but variants are often difficult to interpret</span></li>
+<li><span class="fragment highlight-current-red" data-fragment-index="2"> Want to leverage existing data as much as possible</span></li>
+</ul>
+<aside class="notes">
+<p>Typical sequencing studies either focus on individual patients (or trios) or larger cohorts.</p>
+<p>Obviously these serve different objectives, either individual diagnosis/treatment or generally gaining better understanding of phenotype.</p>
+<p>Variants of interest may be rare or common.</p>
+Understanding the impact of exonic variation is relatively easy (but not without pitfalls). Non-coding variation is much harder.
+</aside>
+</section></section>
 <section><section id="exome-sequencing" class="titleslide slide level1"><h1>Exome sequencing</h1></section><section id="breast-and-ovarian-cancer-risk-genes" class="slide level2 small-header">
 <h1>Breast and Ovarian Cancer risk genes</h1>
 <div class="twocolumn">
@@ -63,15 +72,15 @@
 </ul>
 <div class="fragment">
 <ul>
-<li>Sequenced exomes of 507 DNA repair genes in 1,150 patients.</li>
+<li>Sequenced exons of 507 DNA repair genes in 1,150 patients.</li>
 <li>Sequenced pools of 24 individuals.</li>
 <li>Included 79 individuals with known mutations in breast cancer predisposition genes as positive controls.</li>
 </ul>
 </div>
 </div>
-<div class="fragment popup">
-<img src="figure/ppm1d_paper.png" />
-</div>
+<aside class="notes">
+Note that no controls were sequenced and samples are pooled (no barcoding) to reduce amount of time and money required.
+</aside>
 </section><section id="analysis-strategy" class="slide level2">
 <h1>Analysis strategy</h1>
 <ul>
@@ -79,7 +88,7 @@
 <li><span class="math">\(\gt\)</span> 480<span class="math">\(\times\)</span> coverage in 90% of target region</li>
 <li>Call variants in pools with <a href="http://sourceforge.net/projects/syzygy/">Syzygy</a>
 <ul>
-<li>Good sensitivity for rare variants (24/26 SNPs and 51/54 indels)</li>
+<li>Good sensitivity for rare variants<br /> (24/26 SNPs and 51/54 indels)</li>
 <li>Identified 34,564 variants</li>
 </ul></li>
 <li><span class="fragment highlight-current-red" data-fragment-index="0"> Functional annotation obtained via EnsEMBL</span>
@@ -122,6 +131,7 @@
 <ul>
 <li>Removed variants used as positive controls.</li>
 <li>Five individuals had PPM1D PTVs in discovery cohort.</li>
+<li>Note that position in transcript suggests these variants will escape NMD (may have been excluded by strict LoF filter)</li>
 <li>25 PTVs total</li>
 <li>Relative risk: BC 2.7, OV 11.5</li>
 </ul>
@@ -135,9 +145,12 @@
 </ul>
 <div class="fragment">
 <ul>
-<li>Identified truncated proteins show increased activity.</li>
+<li>Truncated proteins show increased activity.</li>
 <li>PPM1D over-expression previously associated with breast cancer.</li>
 </ul>
+<div class="fragment popup">
+<img src="figure/ppm1d_paper.png" />
+</div>
 </div>
 </section></section>
 <section><section id="non-coding-variants-more-information-needed" class="titleslide slide level1"><h1>Non-coding variants: More information needed</h1></section><section id="interpreting-non-coding-variants" class="slide level2 small-header">
@@ -363,276 +376,7 @@ Should systematically incorporate existing data into the analysis to provide add
 //          { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; }, }
 //          { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 ]});
-
-function getCSS(className_) {
-    var styleSheets = window.document.styleSheets;
-    var styleSheetsLength = styleSheets.length;
-    for(var i = 0; i < styleSheetsLength; i++){
-        var classes = styleSheets[i].rules || styleSheets[i].cssRules;
-        var classesLength = classes.length;
-        for (var x = 0; x < classesLength; x++) {
-            if (classes[x].selectorText == className_) {
-                var ret;
-                if(classes[x].cssText){
-                    ret = classes[x].cssText;
-                } else {
-                    ret = classes[x].style.cssText;
-                }
-                if(ret.indexOf(classes[x].selectorText) == -1){
-                    ret = classes[x].selectorText + "{" + ret + "}";
-                }
-                return ret;
-            }
-        }
-    }
-
-}
-
-function getHeaderFontSize(){
-	var style = getCSS(".reveal .header h1");
-	var pattern = /font-size\:\s*(\d+\.*\d*)(\w+)/;
-	var match = pattern.exec(getCSS('.reveal .header h1'));
-	var fontSize = match[1];
-	if(match[2] == "em"){
-		defaultSize = getDefaultFontSize(document.querySelector('.reveal .header'));
-		fontSize = fontSize*defaultSize;
-	}
-	return fontSize;
-}
-
-
-function getTitleSize(text, fontFace, fontSize){
-	// setup variables
-	var c = document.createElement('canvas');
-    var div = document.createElement('div');
-    div.style.font = fontFace;
-    div.style.fontSize = fontSize;
-    div.innerHTML = text;
-    
-	// set canvas's size to be equal with div
-	parent = document.querySelector('.reveal .header'); 
-	parent.appendChild(div);
-	c.width = div.offsetWidth;
-	c.height = div.offsetHeight;
-	parent.removeChild(div);
-	
-	var ctx = c.getContext('2d');
-	// get div's font from computed style and apply it to context
-	ctx.font = fontFace;
-	// use color other than black because all pixels are 0 when black and transparent
-	ctx.fillStyle = '#bbb';
-	// draw the text near the bottom of the canvas
-	ctx.fillText(div.innerText, 0, div.offsetHeight);
-	
-	// loop trough the canvas' data to find first colored pixel
-	var data = ctx.getImageData(0, 0, c.width, c.height).data,
-	minY = 0, minX = 0, len = data.length;
-	for (var i = 0; i < len; i += 4) {
-	    // when you found it
-	    if (data[i] != 0) {
-	        // get pixel's y position
-	        minY = Math.floor(i / 4 / c.width);
-	        break;
-	    }
-	}
-
-	return { width: c.width, height: c.height - minY + 'px'};
-}
-
-function getDefaultFontSize(parentElement)
-{
-    parentElement = parentElement || document.body;
-    var div = document.createElement('div');
-    div.style.width = "1000em";
-    parentElement.appendChild(div);
-    var pixels = div.offsetWidth / 1000;
-    parentElement.removeChild(div);
-    return pixels;
-}
-
-  // hide header on title slides
-  Element.prototype.hasClass = function hasClass(className) {
-    return this.className && new RegExp('(^|\\s)' + className + '(\\s|$)').test(this.className);
-  }
-  Element.prototype.isTitle = function isTitle() {
-  	return Reveal.getIndices()["h"] == 0 ||  this.hasClass("titleslide");
-  }
-  
-  // display slide title as part of header
-  Element.prototype.getStyle = function getStyle(cssprop){
- 	if (this.currentStyle) //IE
-  		return this.currentStyle[cssprop];
- 	else if (document.defaultView && document.defaultView.getComputedStyle) //Firefox
-  		return document.defaultView.getComputedStyle(this, "")[cssprop];
- 	else //try and get inline style
-  		return this.style[cssprop];
-}
-  
-  function getComputedHeaderSize(width, height) {
-		var wrapper = document.querySelector( '.reveal .headerWrapper');
-		var config = Reveal.getConfig();
-		var size = {
-			// Header size
-			width: width,
-			height: height,
-			presentationWidth: wrapper.offsetWidth,
-			presentationHeight: wrapper.offsetHeight
-		};
-
-		// Reduce available space by margin
-		size.presentationWidth -= ( size.presentationHeight * config.margin );
-		size.presentationHeight -= ( size.presentationHeight * config.margin );
-
-		// Slide width may be a percentage of available width
-		if( typeof size.width === 'string' && /%$/.test( size.width ) ) {
-			size.width = parseInt( size.width, 10 ) / 100 * size.presentationWidth;
-		}
-
-		// Slide height may be a percentage of available height
-		if( typeof size.height === 'string' && /%$/.test( size.height ) ) {
-			size.height = parseInt( size.height, 10 ) / 100 * size.presentationHeight;
-		}
-		size.height = parseInt(size.height);
-		size.width = parseInt(size.width);
-		return size;
-
-	}
-  function setHeaderScale(element, width, height){
-  	if( document.querySelector( '.reveal' )) {
-		var config = Reveal.getConfig();
-		var wrapper = document.querySelector( '.reveal .headerWrapper');
-		width = width || element.offsetWidth;
-		height = height || element.offsetHeight;
-		size = getComputedHeaderSize(width, height);
-		
-		var isMobileDevice = navigator.userAgent.match( /(iphone|ipod|ipad|android)/gi );
-				// Determine scale of content to fit within available space
-		scale = Math.min( size.presentationWidth / size.width, size.presentationHeight / size.height );
-
-		// Respect max/min scale settings
-		scale = Math.max( scale, config.minScale );
-		scale = Math.min( scale, config.maxScale );
-
-		// Don't apply any scaling styles if scale is 1
-		if( scale === 1 ) {
-			element.style.zoom = '';
-			element.style.left = '';
-			element.style.top = '';
-			element.style.bottom = '';
-			element.style.right = '';
-			transformElement( element, '' );
-		}
-		else {
-			if(element.tagName == "H1"){
-				element.style.fontSize = getHeaderFontSize()*scale + "px";
-			}
-			else{
-				element.style.width = size.width + 'px';
-				element.style.height = size.height + 'px';
-				// Prefer zooming in desktop Chrome so that content remains crisp
-				if( !isMobileDevice && /chrome/i.test( navigator.userAgent ) && typeof element.style.zoom !== 'undefined' ) {
-					element.style.zoom = scale;
-				}
-				// Apply scale transform as a fallback
-				else {
-					element.style.left = '50%';
-					element.style.top = '50%';
-					element.style.bottom = 'auto';
-					element.style.right = 'auto';
-					transformElement( element, 'translate(-50%, -50%) scale('+ scale +')' );
-				}
-			}
-		}
-	}
-  	
-  }
-  
-  function getDefaultSize(element){
-  	var dim;
-  	if(element.tagName == "H1"){
-  		dim = getTitleSize(elements[i], elements[i].getStyle("font"), getHeaderFontSize());
-  	}
-  	else{
-  		var div = document.createElement('div');
- 		div.innerHTML = element.innerHTML;
-  		parent = document.querySelector('.reveal .header'); 
-		parent.appendChild(div);
-		dim = {width: div.children[0].offsetWidth, height: div.children[0].offsetHeight};
-		parent.removeChild(div);
-  	}
-  	return dim;
-  }
-   
-  function scaleAll(container){
-  	elements = container.children;
-  	var dim;
-  	for(i = 0; i < elements.length; i++){
-  		dim = getDefaultSize(elements[i]);
-  		setHeaderScale(elements[i], dim['width'], dim['height']);
-  	}
-  }
-  
-  Element.prototype.positionTitle = function positionTitle(move){
-  	headerWrapper = document.querySelector('.reveal .headerWrapper');
-  	header = headerWrapper.children[0];
-  	content = Reveal.getCurrentSlide().children 
-  	title = content[0];
-  	if(title.tagName == "H1"){
-  		headerContent = header.children;
-  		for(i = 0; i < headerContent.length; i++){
-  			if(headerContent[i].tagName == "H1"){
-  				previous = Reveal.getPreviousSlide();
-  				if(previous){
-  					previous.insertBefore(headerContent[i], previous.firstChild);
-  				}
-  				else{
-  					header.removeChild(headerContent[i]);
-  				}
-  			}
-  		}
-  		if(move){
-  			header.appendChild(title);
-  			scaleAll(header);
-  		   
-	  		var offset = header.offsetHeight;
-	  		var adjusted = false;
-	  		for(i = 0; i < content.length && !adjusted; i++){
-	  			if(!content[i].hasClass("popup")){
-	  				if(!content[i].hasClass("adjusted")){
-		  				var curMargin = parseInt(content[i].getStyle("marginTop"));
-		  				content[i].style.marginTop = curMargin + offset + "px";
-		  				content[i].className += " adjusted";
-	  				}
-	  				adjusted= true;
-	  			}
-	  		}
-	  	}
-  	}
-  }
-  
-  function toggleHeader(){
-  	if(Reveal.getCurrentSlide().isTitle()){
-  		document.querySelector('.reveal .headerWrapper').style.visibility = 'hidden';
-  	}
-  	else{
-  		document.querySelector('.reveal .headerWrapper').style.visibility = 'visible';
-  	}
-  	Reveal.getCurrentSlide().positionTitle(!Reveal.getCurrentSlide().isTitle());
-  }
-  
-  
-  Reveal.addEventListener('slidechanged', function(event) {
-    toggleHeader();
-  });
-
-  window.addEventListener('resize', function(event){
-  	if(!Reveal.getCurrentSlide().isTitle()){
-  		scaleAll(document.querySelector('.reveal .header'));
-  	}
-  });
-  
-  toggleHeader();
-  
-  </script>
+//	Reveal.configure({slideNumber:true});
+    </script>
     </body>
 </html>
